@@ -1,23 +1,2 @@
 #!/bin/bash
-
-current_dir=$(pwd)
-parent_dir=$(dirname "$current_dir")
-
-for html_file in *.html
-do
-    if [ ! -e "$parent_dir/$html_file" ]
-    then
-        cp "$html_file" "$parent_dir/"
-        echo "Copied $html_file to $parent_dir/"
-    else
-        src_mtime=$(stat -c %Y "$html_file")
-        dest_mtime=$(stat -c %Y "$parent_dir/$html_file")
-
-        if [ "$src_mtime" -gt "$dest_mtime" ]
-        then
-            cp "$html_file" "$parent_dir/"
-            echo "Updated $html_file in $parent_dir/"
-        fi
-    fi
-done
-
+cp un *.html ../
