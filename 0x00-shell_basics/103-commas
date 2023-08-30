@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -p | LC_COLLATE=C sort -d --key=1,1 --key=2n,2 --key=3
+echo -e "./\n../\n$(ls -X | grep -v '^.' | tr '\n' ',' | sed 's/,$/\n/')"
